@@ -3,12 +3,12 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-  <title>DanadyaksaEdu - Portal Edukasi Terpadu (Realtime Sync)</title>
+  <title>DanadyaksaEdu - Portal Edukasi Terpadu (Realtime Sync Multi-Guru)</title>
   <!-- FAVICON YPI -->
-    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
-    <link rel="shortcut icon" href="favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+  <link rel="shortcut icon" href="favicon.ico">
   <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
@@ -39,7 +39,6 @@
   <!-- Firebase SDKs (Compatibility Version) -->
   <script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-app-compat.js"></script>
   <script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-database-compat.js"></script>
-
   <style>
     body {
       font-family: 'Inter', sans-serif;
@@ -174,7 +173,6 @@
       </div>
     </div>
   </aside>
-
   <!-- MOBILE OVERLAY SIDEBAR DRAWER -->
   <div id="mobile-sidebar-backdrop" onclick="toggleMobileMenu()" class="fixed inset-0 z-40 bg-slate-950/70 backdrop-blur-sm hidden transition-opacity"></div>
   <div id="mobile-sidebar" class="fixed top-0 left-0 bottom-0 z-50 w-72 glass-sidebar p-4 space-y-4 flex flex-col justify-between -translate-x-full transition-transform duration-300 ease-in-out">
@@ -216,7 +214,6 @@
       <p>Muhammad Hilman Fasya, S.Pd.</p>
     </div>
   </div>
-
   <!-- MAIN WRAPPER -->
   <div id="main-wrapper" class="flex-1 flex flex-col min-w-0 transition-all duration-300">
     <!-- HEADER NAVBAR -->
@@ -331,7 +328,6 @@
           </div>
         </div>
       </section>
-
       <!-- APP DASHBOARD & CONTENT PAGES -->
       <div id="app-content" class="hidden space-y-6 sm:space-y-8">
         <!-- 1. DASHBOARD TAB -->
@@ -343,10 +339,10 @@
                   DanadyaksaEdu - Membangun Generasi Cerdas
                 </span>
                 <h1 class="text-xl sm:text-3xl font-extrabold text-slate-900 dark:text-white mt-2 sm:mt-3">
-                  Halo, <span id="dash-user-name" class="text-emerald-600 dark:text-cyan-400">Siswa</span> 👋
+                  Halo, <span id="dash-user-name" class="text-emerald-600 dark:text-cyan-400">Pengguna</span> 👋
                 </h1>
                 <p class="text-slate-600 dark:text-slate-300 text-xs sm:text-sm mt-1 max-w-2xl leading-relaxed">
-                  Selamat datang di DanadyaksaEdu! Portal edukasi terpadu yang menghubungkan Siswa dan Guru dalam satu ekosistem digital yang cerdas dan fleksibel.
+                  Selamat datang di DanadyaksaEdu! Portal edukasi terpadu yang menghubungkan Siswa dan Guru dalam satu ekosistem digital yang cerdas, mandiri, dan fleksibel.
                 </p>
               </div>
               <div class="flex items-center space-x-3 w-full sm:w-auto">
@@ -436,7 +432,6 @@
             </div>
           </div>
         </div>
-
         <!-- 2. MODUL & MATERI TAB -->
         <div id="tab-content-modul" class="hidden space-y-4 sm:space-y-6">
           <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-2 sm:gap-4">
@@ -447,7 +442,6 @@
           </div>
           <div id="modules-grid" class="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6"></div>
         </div>
-
         <!-- 3. TUGAS & PROYEK TAB -->
         <div id="tab-content-tugas" class="hidden space-y-4 sm:space-y-6">
           <div>
@@ -458,7 +452,6 @@
             <div class="space-y-3 sm:space-y-4" id="assignment-list"></div>
           </div>
         </div>
-
         <!-- 4. CAPAIAN NILAI TAB -->
         <div id="tab-content-nilai" class="hidden space-y-4 sm:space-y-6">
           <div>
@@ -482,15 +475,14 @@
             </div>
           </div>
         </div>
-
         <!-- 5. MENU UTAMA PENGELOLAAN TERPADU (GURU KHUSUS) -->
         <div id="tab-content-pengelolaan" class="hidden space-y-4 sm:space-y-6">
           <div class="flex flex-col md:flex-row md:items-center justify-between gap-2 sm:gap-4">
             <div>
               <h2 class="text-xl sm:text-2xl font-extrabold text-slate-900 dark:text-white flex items-center">
-                <i class="fa-solid fa-sliders text-amber-600 dark:text-amber-400 mr-2"></i> Pengelolaan Portal (Guru)
+                <i class="fa-solid fa-sliders text-amber-600 dark:text-amber-400 mr-2"></i> Pengelolaan Portal (Khusus Guru Mandiri)
               </h2>
-              <p class="text-[11px] sm:text-xs text-slate-600 dark:text-slate-400 mt-0.5">Kelola data siswa, rekapitulasi nilai, modul, tugas, pengumuman, dan jadwal.</p>
+              <p class="text-[11px] sm:text-xs text-slate-600 dark:text-slate-400 mt-0.5">Kelola data siswa, modul, kuis, tugas, pengumuman, dan jadwal milik Anda sendiri.</p>
             </div>
           </div>
           <!-- SUB-TAB NAVIGATION BAR -->
@@ -501,11 +493,11 @@
             </button>
             <button onclick="switchSubManagementTab('sub-modul')" id="sub-btn-modul" class="flex-1 py-2.5 px-3 rounded-xl text-xs font-bold transition-all duration-200 text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white flex items-center justify-center space-x-2 focus:outline-none">
               <i class="fa-solid fa-folder-plus"></i>
-              <span>Modul & Soal</span>
+              <span>Modul & Soal Anda</span>
             </button>
             <button onclick="switchSubManagementTab('sub-info')" id="sub-btn-info" class="flex-1 py-2.5 px-3 rounded-xl text-xs font-bold transition-all duration-200 text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white flex items-center justify-center space-x-2 focus:outline-none">
               <i class="fa-solid fa-bullhorn"></i>
-              <span>Tugas, Info & Jadwal</span>
+              <span>Tugas, Info & Jadwal Anda</span>
             </button>
           </div>
           <!-- SUB-TAB 1: KELOLA SISWA & REKAPITULASI NILAI -->
@@ -567,7 +559,6 @@
                 </table>
               </div>
             </div>
-
             <!-- LEADERBOARD GURU -->
             <div class="glass-card rounded-2xl p-4 sm:p-6 border border-amber-500/30 shadow-2xl space-y-3 sm:space-y-4">
               <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-amber-500/20 pb-3 sm:pb-4">
@@ -601,7 +592,6 @@
                 </table>
               </div>
             </div>
-
             <div class="glass-card rounded-2xl p-4 sm:p-6 border border-emerald-500/20 dark:border-slate-800 space-y-4">
               <div class="flex items-center justify-between">
                 <h3 class="font-extrabold text-xs sm:text-base text-slate-900 dark:text-white flex items-center">
@@ -612,7 +602,6 @@
               <div id="teacher-quiz-grouped-container" class="space-y-4 sm:space-y-6"></div>
             </div>
           </div>
-
           <!-- SUB-TAB 2: KELOLA MODUL & SOAL -->
           <div id="sub-content-modul" class="hidden space-y-6 sm:space-y-8">
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8">
@@ -623,7 +612,7 @@
                   </div>
                   <div>
                     <h3 class="text-sm sm:text-base font-bold text-slate-900 dark:text-white">Tambah Modul Baru</h3>
-                    <p class="text-[10px] sm:text-[11px] text-slate-500 dark:text-slate-400">Tambahkan modul ajar baru</p>
+                    <p class="text-[10px] sm:text-[11px] text-slate-500 dark:text-slate-400">Tambahkan modul ajar baru milik Anda</p>
                   </div>
                 </div>
                 <form onsubmit="handleCreateModule(event)" class="space-y-3.5 text-xs">
@@ -667,7 +656,7 @@
                     <textarea id="new-mod-content" rows="4" required placeholder="<h3 class='text-xl font-bold'>Judul</h3><p>Penjelasan...</p>" class="w-full px-3 py-2 bg-white dark:bg-slate-900 border border-cyan-500/30 dark:border-slate-700 rounded-xl text-slate-900 dark:text-slate-100 focus:outline-none focus:border-cyan-500"></textarea>
                   </div>
                   <button type="submit" class="w-full py-3 bg-gradient-to-r from-cyan-600 to-indigo-600 hover:from-cyan-500 hover:to-indigo-500 text-white font-bold rounded-xl shadow-lg transition-all">
-                    <i class="fa-solid fa-plus-circle mr-1"></i> Publikasikan Modul
+                    <i class="fa-solid fa-plus-circle mr-1"></i> Publikasikan Modul Anda
                   </button>
                 </form>
               </div>
@@ -678,12 +667,12 @@
                   </div>
                   <div>
                     <h3 class="text-sm sm:text-base font-bold text-slate-900 dark:text-white">Buat / Kelola Soal Kuis</h3>
-                    <p class="text-[10px] sm:text-[11px] text-slate-500 dark:text-slate-400">Tambahkan pertanyaan kuis</p>
+                    <p class="text-[10px] sm:text-[11px] text-slate-500 dark:text-slate-400">Tambahkan pertanyaan kuis pada modul Anda</p>
                   </div>
                 </div>
                 <form onsubmit="handleAddQuizQuestion(event)" class="space-y-4 text-xs">
                   <div>
-                    <label class="block font-semibold text-slate-700 dark:text-slate-300 mb-1">Pilih Target Modul</label>
+                    <label class="block font-semibold text-slate-700 dark:text-slate-300 mb-1">Pilih Target Modul Anda</label>
                     <select id="quiz-target-module" required onchange="loadExistingQuizForModule()" class="w-full px-3 py-2.5 bg-white dark:bg-slate-900 border border-emerald-500/30 dark:border-slate-700 rounded-xl text-slate-900 dark:text-slate-100 focus:outline-none focus:border-emerald-500">
                     </select>
                   </div>
@@ -708,15 +697,14 @@
                     <i class="fa-solid fa-folder-open text-lg sm:text-xl"></i>
                   </div>
                   <div>
-                    <h3 class="text-sm sm:text-base font-bold text-slate-900 dark:text-white">Daftar Modul Aktif</h3>
-                    <p class="text-[10px] sm:text-[11px] text-slate-500 dark:text-slate-400">Kelola modul terpublikasi</p>
+                    <h3 class="text-sm sm:text-base font-bold text-slate-900 dark:text-white">Daftar Modul Milik Anda</h3>
+                    <p class="text-[10px] sm:text-[11px] text-slate-500 dark:text-slate-400">Kelola modul terpublikasi milik Anda saja</p>
                   </div>
                 </div>
               </div>
               <div id="manage-modules-list" class="grid grid-cols-1 md:grid-cols-2 gap-3 sm:gap-4"></div>
             </div>
           </div>
-
           <!-- SUB-TAB 3: KELOLA INFO, TUGAS & JADWAL -->
           <div id="sub-content-info" class="hidden space-y-6 sm:space-y-8">
             <div class="glass-card rounded-2xl sm:rounded-3xl p-4 sm:p-8 border border-teal-500/30 shadow-xl">
@@ -725,8 +713,8 @@
                   <i class="fa-solid fa-list-check text-lg sm:text-xl"></i>
                 </div>
                 <div>
-                  <h3 class="text-sm sm:text-base font-bold text-slate-900 dark:text-white">Kelola Tugas & Proyek</h3>
-                  <p class="text-[10px] sm:text-[11px] text-slate-500 dark:text-slate-400">Buat atau edit penugasan</p>
+                  <h3 class="text-sm sm:text-base font-bold text-slate-900 dark:text-white">Kelola Tugas & Proyek Anda</h3>
+                  <p class="text-[10px] sm:text-[11px] text-slate-500 dark:text-slate-400">Buat atau edit penugasan mandiri Anda</p>
                 </div>
               </div>
               <form onsubmit="handleSaveAssignment(event)" class="space-y-3.5 text-xs">
@@ -750,7 +738,6 @@
               </form>
               <div class="mt-4 sm:mt-6 border-t border-teal-500/20 pt-4 space-y-2.5" id="task-manage-list"></div>
             </div>
-
             <!-- DAFTAR PENGUMPULAN TUGAS SISWA -->
             <div class="glass-card rounded-2xl sm:rounded-3xl p-4 sm:p-8 border border-amber-500/30 shadow-xl">
               <div class="flex items-center space-x-3 mb-4 sm:mb-5 pb-3 border-b border-amber-500/20">
@@ -758,8 +745,8 @@
                   <i class="fa-solid fa-clipboard-check text-lg sm:text-xl"></i>
                 </div>
                 <div>
-                  <h3 class="text-sm sm:text-base font-bold text-slate-900 dark:text-white">Pengumpulan Tugas Siswa</h3>
-                  <p class="text-[10px] sm:text-[11px] text-slate-500 dark:text-slate-400">Periksa dan berikan penilaian</p>
+                  <h3 class="text-sm sm:text-base font-bold text-slate-900 dark:text-white">Pengumpulan Tugas Siswa (Tugas Anda)</h3>
+                  <p class="text-[10px] sm:text-[11px] text-slate-500 dark:text-slate-400">Periksa dan berikan penilaian pada tugas yang Anda buat</p>
                 </div>
               </div>
               <div id="teacher-submissions-list" class="space-y-3"></div>
@@ -772,8 +759,8 @@
                     <i class="fa-solid fa-scroll text-lg sm:text-xl"></i>
                   </div>
                   <div>
-                    <h3 class="text-sm sm:text-base font-bold text-slate-900 dark:text-white">Tambah Pengumuman</h3>
-                    <p class="text-[10px] sm:text-[11px] text-slate-500 dark:text-slate-400">Publikasi informasi baru</p>
+                    <h3 class="text-sm sm:text-base font-bold text-slate-900 dark:text-white">Tambah Pengumuman Anda</h3>
+                    <p class="text-[10px] sm:text-[11px] text-slate-500 dark:text-slate-400">Publikasi informasi baru dari Anda</p>
                   </div>
                 </div>
                 <form onsubmit="handleSaveAnnouncement(event)" class="space-y-3.5 text-xs">
@@ -813,8 +800,8 @@
                     <i class="fa-solid fa-calendar-plus text-lg sm:text-xl"></i>
                   </div>
                   <div>
-                    <h3 class="text-sm sm:text-base font-bold text-slate-900 dark:text-white">Tambah / Edit Jadwal</h3>
-                    <p class="text-[10px] sm:text-[11px] text-slate-500 dark:text-slate-400">Atur jadwal pembelajaran</p>
+                    <h3 class="text-sm sm:text-base font-bold text-slate-900 dark:text-white">Tambah / Edit Jadwal Mengajar Anda</h3>
+                    <p class="text-[10px] sm:text-[11px] text-slate-500 dark:text-slate-400">Atur jadwal pembelajaran Anda</p>
                   </div>
                 </div>
                 <form onsubmit="handleSaveSchedule(event)" class="space-y-3.5 text-xs">
@@ -847,7 +834,6 @@
             </div>
           </div>
         </div>
-
         <!-- 6. EDIT PROFIL TAB -->
         <div id="tab-content-profil" class="hidden space-y-4 sm:space-y-6 max-w-2xl mx-auto">
           <div>
@@ -906,7 +892,6 @@
       </div>
     </main>
   </div>
-
   <!-- MODAL READ MATERI & KUIS MODUL -->
   <div id="module-modal" class="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-4 bg-slate-950/80 backdrop-blur-sm hidden">
     <div class="glass-modal w-full max-w-3xl max-h-[92vh] rounded-2xl sm:rounded-3xl p-4 sm:p-8 overflow-y-auto shadow-2xl relative flex flex-col">
@@ -916,7 +901,6 @@
       <div id="module-modal-content"></div>
     </div>
   </div>
-
   <!-- MODAL EDIT MODUL (GURU) -->
   <div id="edit-module-modal" class="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-4 bg-slate-950/80 backdrop-blur-sm hidden">
     <div class="glass-modal w-full max-w-xl max-h-[90vh] rounded-2xl sm:rounded-3xl p-4 sm:p-8 overflow-y-auto shadow-2xl relative">
@@ -967,7 +951,6 @@
       </form>
     </div>
   </div>
-
   <!-- MODAL UPLOAD TUGAS -->
   <div id="upload-modal" class="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-4 bg-slate-950/80 backdrop-blur-sm hidden">
     <div class="glass-modal w-full max-w-md rounded-2xl sm:rounded-3xl p-5 sm:p-6 border border-emerald-500/30 shadow-2xl relative">
@@ -996,7 +979,6 @@
       </form>
     </div>
   </div>
-
   <!-- MODAL RIWAYAT AKTIVITAS -->
   <div id="activity-modal" class="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-4 bg-slate-950/80 backdrop-blur-sm hidden">
     <div class="glass-modal w-full max-w-lg max-h-[85vh] rounded-2xl sm:rounded-3xl p-4 sm:p-6 shadow-2xl relative flex flex-col">
@@ -1012,7 +994,6 @@
       </div>
     </div>
   </div>
-
   <!-- MODAL EDIT / TAMBAH SISWA (GURU) -->
   <div id="student-modal" class="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-4 bg-slate-950/80 backdrop-blur-sm hidden">
     <div class="glass-modal w-full max-w-md rounded-2xl sm:rounded-3xl p-4 sm:p-6 border border-amber-500/30 shadow-2xl relative">
@@ -1056,29 +1037,21 @@
       </form>
     </div>
   </div>
-
   <!-- JAVASCRIPT LOGIC WITH FIREBASE SYNC -->
   <script>
     // -------------------------------------------------------------------
-    // 1. FIREBASE CONFIGURATION (Ganti kredensial di bawah dari Firebase Console Anda)
+    // 1. FIREBASE CONFIGURATION
     // -------------------------------------------------------------------
-    const firebaseConfig = {apiKey: "AIzaSyBg46Ijb5JgDNYeDfoCtWwIytonvjpPG6s",
-
-  authDomain: "danadyaksaedu.firebaseapp.com",
-
-  databaseURL: "https://danadyaksaedu-default-rtdb.firebaseio.com",
-
-  projectId: "danadyaksaedu",
-
-  storageBucket: "danadyaksaedu.firebasestorage.app",
-
-  messagingSenderId: "104085747584",
-
-  appId: "1:104085747584:web:bb089fac9f63af86ee7365",
-
-  measurementId: "G-CLMC1W55S3"
+    const firebaseConfig = {
+      apiKey: "AIzaSyBg46Ijb5JgDNYeDfoCtWwIytonvjpPG6s",
+      authDomain: "danadyaksaedu.firebaseapp.com",
+      databaseURL: "https://danadyaksaedu-default-rtdb.firebaseio.com",
+      projectId: "danadyaksaedu",
+      storageBucket: "danadyaksaedu.firebasestorage.app",
+      messagingSenderId: "104085747584",
+      appId: "1:104085747584:web:bb089fac9f63af86ee7365",
+      measurementId: "G-CLMC1W55S3"
     };
-
     // Initialize Firebase
     if (!firebase.apps.length) {
       firebase.initializeApp(firebaseConfig);
@@ -1093,6 +1066,8 @@
     const DEFAULT_MODULES = [
       {
         id: "mod-1",
+        teacherId: "hilmanfasya90@gmail.com",
+        teacherName: "Muhammad Hilman Fasya, S.Pd.",
         title: "Pemrograman Berorientasi Objek (OOP)",
         desc: "Memahami Encapsulation, Inheritance, Polymorphism, & Abstraction dalam pemrograman modern.",
         badge: "Modul 1",
@@ -1124,6 +1099,8 @@
       },
       {
         id: "mod-2",
+        teacherId: "hilmanfasya90@gmail.com",
+        teacherName: "Muhammad Hilman Fasya, S.Pd.",
         title: "Desain Antarmuka & UX (UI/UX Design)",
         desc: "Prinsip dasar Usability, Design Thinking, Wireframing, dan High-Fidelity Prototyping.",
         badge: "Modul 2",
@@ -1148,6 +1125,7 @@
     const DEFAULT_ANNOUNCEMENTS = [
       {
         id: "ann-1",
+        teacherId: "hilmanfasya90@gmail.com",
         category: "Project submission",
         date: "18 Okt 2026",
         title: "Pengumpulan Proyek UI/UX Aplikasi Edukasi",
@@ -1157,13 +1135,14 @@
     const DEFAULT_SCHEDULES = [
       {
         id: "sch-1",
+        teacherId: "hilmanfasya90@gmail.com",
         time: "Senin, 08:00 WIB",
         subject: "Object Oriented Programming (OOP)",
         room: "Lab 1"
       }
     ];
     const DEFAULT_ASSIGNMENTS = [
-      { id: "t1", title: "Proyek UI/UX Figma - Aplikasi Sekolah", due: "25 Oktober 2026" }
+      { id: "t1", teacherId: "hilmanfasya90@gmail.com", title: "Proyek UI/UX Figma - Aplikasi Sekolah", due: "25 Oktober 2026" }
     ];
 
     // Global State
@@ -1195,7 +1174,6 @@
     function initRealtimeSync() {
       const syncStatus = document.getElementById('firebase-sync-status');
       
-      // Monitor status koneksi ke Firebase
       db.ref('.info/connected').on('value', (snap) => {
         if (snap.val() === true) {
           if (syncStatus) {
@@ -1210,7 +1188,6 @@
         }
       });
 
-      // Bind Listeners
       db.ref('danadyaksa/accounts').on('value', (snapshot) => {
         const val = snapshot.val();
         if (!val) {
@@ -1302,7 +1279,6 @@
       checkSession();
     }
 
-    // Helper Fungsi untuk Simpan Data ke Firebase
     function saveToFirebase(path, data) {
       db.ref(`danadyaksa/${path}`).set(data).catch(err => {
         console.error("Firebase Sync Error:", err);
@@ -1500,6 +1476,10 @@
       updateDashboardTaskStats();
       renderStudentQuizHistory();
       renderAssignments();
+      renderModules();
+      renderManageModulesList();
+      populateModuleDropdown();
+      renderAnnouncementsAndSchedules();
       switchTab('dashboard');
     }
 
@@ -1831,10 +1811,14 @@
       } else if (subKey === 'sub-modul') {
         contentModul.classList.remove('hidden');
         btnModul.className = "flex-1 py-2.5 px-3 rounded-xl text-xs font-bold transition-all duration-200 bg-cyan-500 text-slate-950 shadow-md flex items-center justify-center space-x-2 focus:outline-none";
+        renderManageModulesList();
+        populateModuleDropdown();
       } else if (subKey === 'sub-info') {
         contentInfo.classList.remove('hidden');
         btnInfo.className = "flex-1 py-2.5 px-3 rounded-xl text-xs font-bold transition-all duration-200 bg-indigo-600 text-white shadow-md flex items-center justify-center space-x-2 focus:outline-none";
         renderTeacherSubmissions();
+        renderAnnouncementsAndSchedules();
+        renderManageTaskContainer();
       }
     }
 
@@ -1926,6 +1910,7 @@
       switchTab('dashboard');
     }
 
+    // MEMFILTER TAMPILAN PENGELOLAAN UNTUK TIAP GURU
     function renderAnnouncementsAndSchedules() {
       const dashAnnContainer = document.getElementById('dashboard-announcement-list');
       if (dashAnnContainer) {
@@ -1944,6 +1929,7 @@
           `).join('');
         }
       }
+
       const dashSchContainer = document.getElementById('dashboard-schedule-list');
       if (dashSchContainer) {
         if (schedules.length === 0) {
@@ -1960,35 +1946,53 @@
           `).join('');
         }
       }
+
       const manageAnnContainer = document.getElementById('announcement-manage-list');
       if (manageAnnContainer) {
-        manageAnnContainer.innerHTML = announcements.map(a => `
-          <div class="p-2.5 rounded-xl bg-white/80 dark:bg-slate-900/60 border border-indigo-500/20 dark:border-slate-800 flex justify-between items-center text-xs gap-2">
-            <div class="overflow-hidden">
-              <span class="text-[9px] font-bold text-indigo-600 dark:text-indigo-400 uppercase">${a.category} (${a.date})</span>
-              <h5 class="font-bold text-slate-800 dark:text-slate-200 truncate">${a.title}</h5>
+        const myAnnouncements = currentUser && currentUser.role === 'guru'
+          ? announcements.filter(a => !a.teacherId || a.teacherId === currentUser.id)
+          : announcements;
+
+        if (myAnnouncements.length === 0) {
+          manageAnnContainer.innerHTML = `<p class="text-xs text-slate-500 italic p-2">Belum ada pengumuman yang Anda buat.</p>`;
+        } else {
+          manageAnnContainer.innerHTML = myAnnouncements.map(a => `
+            <div class="p-2.5 rounded-xl bg-white/80 dark:bg-slate-900/60 border border-indigo-500/20 dark:border-slate-800 flex justify-between items-center text-xs gap-2">
+              <div class="overflow-hidden">
+                <span class="text-[9px] font-bold text-indigo-600 dark:text-indigo-400 uppercase">${a.category} (${a.date})</span>
+                <h5 class="font-bold text-slate-800 dark:text-slate-200 truncate">${a.title}</h5>
+              </div>
+              <div class="flex items-center space-x-1 shrink-0">
+                <button onclick="editAnnouncement('${a.id}')" class="p-1.5 rounded-lg bg-indigo-500/10 hover:bg-indigo-500/20 text-indigo-600 dark:text-indigo-400"><i class="fa-solid fa-pen text-xs"></i></button>
+                <button onclick="deleteAnnouncement('${a.id}')" class="p-1.5 rounded-lg bg-rose-500/10 hover:bg-rose-500/20 text-rose-600 dark:text-rose-400"><i class="fa-solid fa-trash text-xs"></i></button>
+              </div>
             </div>
-            <div class="flex items-center space-x-1 shrink-0">
-              <button onclick="editAnnouncement('${a.id}')" class="p-1.5 rounded-lg bg-indigo-500/10 hover:bg-indigo-500/20 text-indigo-600 dark:text-indigo-400"><i class="fa-solid fa-pen text-xs"></i></button>
-              <button onclick="deleteAnnouncement('${a.id}')" class="p-1.5 rounded-lg bg-rose-500/10 hover:bg-rose-500/20 text-rose-600 dark:text-rose-400"><i class="fa-solid fa-trash text-xs"></i></button>
-            </div>
-          </div>
-        `).join('');
+          `).join('');
+        }
       }
+
       const manageSchContainer = document.getElementById('schedule-manage-list');
       if (manageSchContainer) {
-        manageSchContainer.innerHTML = schedules.map(s => `
-          <div class="p-2.5 rounded-xl bg-white/80 dark:bg-slate-900/60 border border-emerald-500/20 dark:border-slate-800 flex justify-between items-center text-xs gap-2">
-            <div class="overflow-hidden">
-              <span class="text-[9px] font-bold text-emerald-600 dark:text-emerald-400">${s.time} - ${s.room}</span>
-              <h5 class="font-bold text-slate-800 dark:text-slate-200 truncate">${s.subject}</h5>
+        const mySchedules = currentUser && currentUser.role === 'guru'
+          ? schedules.filter(s => !s.teacherId || s.teacherId === currentUser.id)
+          : schedules;
+
+        if (mySchedules.length === 0) {
+          manageSchContainer.innerHTML = `<p class="text-xs text-slate-500 italic p-2">Belum ada jadwal yang Anda buat.</p>`;
+        } else {
+          manageSchContainer.innerHTML = mySchedules.map(s => `
+            <div class="p-2.5 rounded-xl bg-white/80 dark:bg-slate-900/60 border border-emerald-500/20 dark:border-slate-800 flex justify-between items-center text-xs gap-2">
+              <div class="overflow-hidden">
+                <span class="text-[9px] font-bold text-emerald-600 dark:text-emerald-400">${s.time} - ${s.room}</span>
+                <h5 class="font-bold text-slate-800 dark:text-slate-200 truncate">${s.subject}</h5>
+              </div>
+              <div class="flex items-center space-x-1 shrink-0">
+                <button onclick="editSchedule('${s.id}')" class="p-1.5 rounded-lg bg-emerald-500/10 hover:bg-emerald-500/20 text-emerald-600 dark:text-emerald-400"><i class="fa-solid fa-pen text-xs"></i></button>
+                <button onclick="deleteSchedule('${s.id}')" class="p-1.5 rounded-lg bg-rose-500/10 hover:bg-rose-500/20 text-rose-600 dark:text-rose-400"><i class="fa-solid fa-trash text-xs"></i></button>
+              </div>
             </div>
-            <div class="flex items-center space-x-1 shrink-0">
-              <button onclick="editSchedule('${s.id}')" class="p-1.5 rounded-lg bg-emerald-500/10 hover:bg-emerald-500/20 text-emerald-600 dark:text-emerald-400"><i class="fa-solid fa-pen text-xs"></i></button>
-              <button onclick="deleteSchedule('${s.id}')" class="p-1.5 rounded-lg bg-rose-500/10 hover:bg-rose-500/20 text-rose-600 dark:text-rose-400"><i class="fa-solid fa-trash text-xs"></i></button>
-            </div>
-          </div>
-        `).join('');
+          `).join('');
+        }
       }
       renderManageTaskContainer();
     }
@@ -1996,11 +2000,15 @@
     function renderManageTaskContainer() {
       const manageTaskContainer = document.getElementById('task-manage-list');
       if (manageTaskContainer) {
-        if (assignments.length === 0) {
-          manageTaskContainer.innerHTML = `<p class="text-xs text-slate-500 italic p-2">Belum ada tugas dibuat.</p>`;
+        const myAssignments = currentUser && currentUser.role === 'guru'
+          ? assignments.filter(t => !t.teacherId || t.teacherId === currentUser.id)
+          : assignments;
+
+        if (myAssignments.length === 0) {
+          manageTaskContainer.innerHTML = `<p class="text-xs text-slate-500 italic p-2">Belum ada tugas yang Anda buat.</p>`;
           return;
         }
-        manageTaskContainer.innerHTML = assignments.map(t => `
+        manageTaskContainer.innerHTML = myAssignments.map(t => `
           <div class="p-2.5 rounded-xl bg-white/80 dark:bg-slate-900/60 border border-teal-500/20 dark:border-slate-800 flex justify-between items-center text-xs gap-2">
             <div class="overflow-hidden">
               <span class="text-[9px] font-bold text-teal-600 dark:text-teal-400">Tenggat: ${t.due}</span>
@@ -2020,16 +2028,19 @@
       const editId = document.getElementById('task-edit-id').value;
       const title = document.getElementById('task-title').value.trim();
       const due = document.getElementById('task-due').value.trim();
+      
       if (editId) {
         const idx = assignments.findIndex(t => t.id === editId);
         if (idx !== -1) {
           assignments[idx].title = title;
           assignments[idx].due = due;
+          assignments[idx].teacherId = currentUser.id;
           showToast("Tugas diperbarui!", "success");
         }
       } else {
         const newTask = {
           id: `t-${Date.now()}`,
+          teacherId: currentUser.id,
           title: title,
           due: due
         };
@@ -2065,11 +2076,20 @@
     function renderTeacherSubmissions() {
       const container = document.getElementById('teacher-submissions-list');
       if (!container) return;
-      if (taskSubmissions.length === 0) {
-        container.innerHTML = `<p class="text-xs text-slate-500 italic p-3 text-center">Belum ada pengumpulan tugas.</p>`;
+
+      const myTaskIds = currentUser && currentUser.role === 'guru'
+        ? assignments.filter(a => !a.teacherId || a.teacherId === currentUser.id).map(a => a.id)
+        : [];
+
+      const filteredSubmissions = currentUser && currentUser.role === 'guru'
+        ? taskSubmissions.filter(s => myTaskIds.includes(s.taskId))
+        : taskSubmissions;
+
+      if (filteredSubmissions.length === 0) {
+        container.innerHTML = `<p class="text-xs text-slate-500 italic p-3 text-center">Belum ada pengumpulan tugas untuk kelas Anda.</p>`;
         return;
       }
-      container.innerHTML = taskSubmissions.map(s => `
+      container.innerHTML = filteredSubmissions.map(s => `
         <div class="p-3 sm:p-4 rounded-2xl bg-white/80 dark:bg-slate-900/80 border border-amber-500/20 flex flex-col md:flex-row items-start md:items-center justify-between gap-3 text-xs">
           <div class="space-y-1 w-full">
             <div class="flex items-center justify-between sm:justify-start sm:space-x-2">
@@ -2121,15 +2141,17 @@
       const category = document.getElementById('ann-category').value.trim();
       const date = document.getElementById('ann-date').value.trim();
       const desc = document.getElementById('ann-content').value.trim();
+      
       if (editId) {
         const idx = announcements.findIndex(a => a.id === editId);
         if (idx !== -1) {
-          announcements[idx] = { id: editId, title, category, date, desc };
+          announcements[idx] = { id: editId, teacherId: currentUser.id, title, category, date, desc };
           showToast("Pengumuman diperbarui!", "success");
         }
       } else {
         const newAnn = {
           id: `ann-${Date.now()}`,
+          teacherId: currentUser.id,
           title, category, date, desc
         };
         announcements.unshift(newAnn);
@@ -2171,15 +2193,17 @@
       const subject = document.getElementById('sch-subject').value.trim();
       const time = document.getElementById('sch-time').value.trim();
       const room = document.getElementById('sch-room').value.trim();
+      
       if (editId) {
         const idx = schedules.findIndex(s => s.id === editId);
         if (idx !== -1) {
-          schedules[idx] = { id: editId, subject, time, room };
+          schedules[idx] = { id: editId, teacherId: currentUser.id, subject, time, room };
           showToast("Jadwal diperbarui!", "success");
         }
       } else {
         const newSch = {
           id: `sch-${Date.now()}`,
+          teacherId: currentUser.id,
           subject, time, room
         };
         schedules.push(newSch);
@@ -2223,6 +2247,7 @@
       }
       container.innerHTML = courseModules.map(m => {
         const questionCount = (m.quizQuestions && m.quizQuestions.length) ? m.quizQuestions.length : 0;
+        const authorInfo = m.teacherName ? `<span class="block text-[9px] text-slate-400 mt-1"><i class="fa-solid fa-chalkboard-user mr-1"></i> ${m.teacherName}</span>` : '';
         return `
           <div class="glass-card rounded-2xl p-4 sm:p-6 border border-emerald-500/20 dark:border-slate-800 hover:border-emerald-500/40 transition-all group flex flex-col justify-between">
             <div>
@@ -2232,8 +2257,9 @@
                 </span>
                 <i class="fa-solid ${m.icon || 'fa-book'} text-xl sm:text-2xl text-${m.color || 'emerald'}-600 dark:text-${m.color || 'emerald'}-400 group-hover:scale-110 transition-transform"></i>
               </div>
-              <h3 class="font-bold text-base sm:text-lg text-slate-900 dark:text-white mb-1.5 sm:mb-2">${m.title}</h3>
-              <p class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed mb-4">${m.desc}</p>
+              <h3 class="font-bold text-base sm:text-lg text-slate-900 dark:text-white mb-1">${m.title}</h3>
+              ${authorInfo}
+              <p class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed my-3">${m.desc}</p>
             </div>
             <button onclick="openModuleReader('${m.id}')" class="w-full py-2.5 rounded-xl bg-emerald-500/10 dark:bg-slate-900 hover:bg-emerald-500/20 dark:hover:bg-slate-800 border border-emerald-500/30 dark:border-slate-700 text-xs font-bold text-emerald-700 dark:text-cyan-400 transition-all flex items-center justify-center focus:outline-none">
               <span>Baca Materi & Kuis</span>
@@ -2645,11 +2671,16 @@
     function populateModuleDropdown() {
       const select = document.getElementById('quiz-target-module');
       if (!select) return;
-      if (courseModules.length === 0) {
-        select.innerHTML = `<option value="">-- Tidak ada modul --</option>`;
+
+      const myModules = currentUser && currentUser.role === 'guru'
+        ? courseModules.filter(m => !m.teacherId || m.teacherId === currentUser.id)
+        : courseModules;
+
+      if (myModules.length === 0) {
+        select.innerHTML = `<option value="">-- Belum ada modul milik Anda --</option>`;
         return;
       }
-      select.innerHTML = courseModules.map(m => `
+      select.innerHTML = myModules.map(m => `
         <option value="${m.id}">${m.badge} - ${m.title}</option>
       `).join('');
     }
@@ -2657,11 +2688,16 @@
     function renderManageModulesList() {
       const listContainer = document.getElementById('manage-modules-list');
       if (!listContainer) return;
-      if (courseModules.length === 0) {
-        listContainer.innerHTML = `<div class="col-span-2 text-center p-4 text-slate-500 text-xs">Belum ada modul terdaftar.</div>`;
+
+      const myModules = currentUser && currentUser.role === 'guru'
+        ? courseModules.filter(m => !m.teacherId || m.teacherId === currentUser.id)
+        : courseModules;
+
+      if (myModules.length === 0) {
+        listContainer.innerHTML = `<div class="col-span-2 text-center p-4 text-slate-500 text-xs">Belum ada modul yang Anda buat.</div>`;
         return;
       }
-      listContainer.innerHTML = courseModules.map(m => `
+      listContainer.innerHTML = myModules.map(m => `
         <div class="p-3.5 rounded-2xl bg-white/80 dark:bg-slate-900/60 border border-cyan-500/25 dark:border-slate-800 flex items-center justify-between gap-2 shadow-sm">
           <div class="flex items-center space-x-2.5 overflow-hidden">
             <div class="w-8 h-8 sm:w-10 sm:h-10 rounded-xl bg-${m.color || 'cyan'}-500/10 text-${m.color || 'cyan'}-600 dark:text-${m.color || 'cyan'}-400 flex items-center justify-center shrink-0">
@@ -2798,8 +2834,11 @@
       const icon = getAutoIcon(title);
       const desc = document.getElementById('new-mod-desc').value.trim();
       const content = document.getElementById('new-mod-content').value.trim();
+      
       const newModule = {
         id: `mod-${Date.now()}`,
+        teacherId: currentUser.id,
+        teacherName: currentUser.name,
         title, desc, badge, icon, color, content,
         quizQuestions: []
       };
@@ -2841,6 +2880,9 @@
         courseModules[modIndex].icon = document.getElementById('edit-mod-icon').value.trim();
         courseModules[modIndex].desc = document.getElementById('edit-mod-desc').value.trim();
         courseModules[modIndex].content = document.getElementById('edit-mod-content').value.trim();
+        courseModules[modIndex].teacherId = currentUser.id;
+        courseModules[modIndex].teacherName = currentUser.name;
+        
         saveToFirebase('modules', courseModules);
         closeEditModuleModal();
         showToast("Modul diperbarui!", "success");
